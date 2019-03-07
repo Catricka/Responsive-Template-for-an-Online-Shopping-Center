@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" class="responsive">
+
+<head>
+	<title>فروشگاه اینترنتی زبلون</title>
+	<base />
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="My Store" />
+
+	<link href="image/catalog/zebloon/balloon2.png" rel="icon" />
+	
+
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,300italic,500italic,700,700italic,900,900italic,100italic,100&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300,300italic,400italic,700italic&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="catalog/view/theme/zebloon/css/cache_css.css" media="screen" />
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="catalog/view/theme/zebloon/js/cache_js.js"></script>
+	<script type="text/javascript" src="catalog/view/theme/zebloon/js/jquery.themepunch.plugins.min.js"></script>
+
+	<script type="text/javascript" src="catalog/view/theme/zebloon/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="catalog/view/theme/zebloon/js/jquery.magnific-popup.min.js"></script>
+
+
+
+	<script type="text/javascript" src="catalog/view/theme/zebloon/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="catalog/view/theme/zebloon/js/jquery.jcarousel.min.js"></script>
+
+	<script type="text/javascript">
+	    var transition = 'slide';
+	    var animation_time = 300;
+
+	    var checkout_url = 'index630e.html?route=checkout/checkout';
+	</script>
+
+
+
+
+</head>
+<body style="	font-family:yekan !important;">
+
+
+
+
+
+
+	<script type="text/javascript">
+	    $('body').on('click', '.quickview a', function () {
+	        $('#quickview .modal-header .modal-title').html($(this).attr('title'));
+	        $('#quickview .modal-body').load($(this).attr('rel') + ' #quickview_product', function (result) {
+	            $('#quickview').modal('show');
+	            $('#quickview .popup-gallery').magnificPopup({
+	                delegate: 'a',
+	                type: 'image',
+	                tLoading: 'Loading image #%curr%...',
+	                mainClass: 'mfp-img-mobile',
+	                gallery: {
+	                    enabled: true,
+	                    navigateByImgClick: true,
+	                    preload: [0, 1]
+	                },
+	                image: {
+	                    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+	                    titleSrc: function (item) {
+	                        return item.el.attr('title');
+	                    }
+	                }
+	            });
+	        });
+	        return false;
+	    });
+
+	    $('#quickview').on('click', '#button-cart', function () {
+	        $('#quickview').modal('hide');
+	        cart.add($(this).attr("rel"));
+	    });
+	</script>
+	<div class="fixed-body">
+		<div id="main" class="main-fixed">
+
+
+
+			<header>
+				<div id="top-line">
+					<div class="container">
+						<div class="row">
+
+
+							<div class="col-sm-6 hidden-xs">
+								
+							</div>
+
+							<div class="col-sm-6 col-xs-12 hidden-xs">
+
+								<div class="quick-access">
+
+
+
+
+
+									<div class="dropdown  my-account currency">
+										
+											<!-- Currency -->
+											<div id="currency" >
+												
+												<a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">ورود به سایت/ثبت نام</a>
+											
+											</div>
+
+											<input type="hidden" name="code" value="" />
+											<input type="hidden" name="redirect" value="index9328.html?route=common/home" />
+										</form>
+
+
+
+
+
+									</div>
+
+									<div class="dropdown  my-account language">
+									</div>
+
+								
+
+								</div>
+
+
+							</div>
+
+
+
+						</div>
+					</div>
+
+                    	<script type="text/javascript">
+                    	    $(function () {
+
+                    	        var $formLogin = $('#login-form');
+                    	        var $formLost = $('#lost-form');
+                    	        var $formRegister = $('#register-form');
+                    	        var $divForms = $('#div-forms');
+                    	        var $modalAnimateTime = 300;
+                    	        var $msgAnimateTime = 150;
+                    	        var $msgShowTime = 2000;
+
+                    	        $("form").submit(function () {
+                    	            switch (this.id) {
+                    	                case "login-form":
+                    	                    var $lg_username = $('#login_username').val();
+                    	                    var $lg_password = $('#login_password').val();
+                    	                    if ($lg_username == "ERROR") {
+                    	                        msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
+                    	                    } else {
+                    	                        msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
+                    	                    }
+                    	                    return false;
+                    	                    break;
+                    	                case "lost-form":
+                    	                    var $ls_email = $('#lost_email').val();
+                    	                    if ($ls_email == "ERROR") {
+                    	                        msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
+                    	                    } else {
+                    	                        msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
+                    	                    }
+                    	                    return false;
+                    	                    break;
+                    	                case "register-form":
+                    	                    var $rg_username = $('#register_username').val();
+                    	                    var $rg_email = $('#register_email').val();
+                    	                    var $rg_password = $('#register_password').val();
+                    	                    if ($rg_username == "ERROR") {
+                    	                        msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
+                    	                    } else {
+                    	                        msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
+                    	                    }
+                    	                    return false;
+                    	                    break;
+                    	                default:
+                    	                    return false;
+                    	            }
+                    	            return false;
+                    	        });
+
+                    	        $('#login_register_btn').click(function () { modalAnimate($formLogin, $formRegister) });
+                    	        $('#register_login_btn').click(function () { modalAnimate($formRegister, $formLogin); });
+                    	        $('#login_lost_btn').click(function () { modalAnimate($formLogin, $formLost); });
+                    	        $('#lost_login_btn').click(function () { modalAnimate($formLost, $formLogin); });
+                    	        $('#lost_register_btn').click(function () { modalAnimate($formLost, $formRegister); });
+                    	        $('#register_lost_btn').click(function () { modalAnimate($formRegister, $formLost); });
+
+                    	        function modalAnimate($oldForm, $newForm) {
+                    	            var $oldH = $oldForm.height();
+                    	            var $newH = $newForm.height();
+                    	            $divForms.css("height", $oldH);
+                    	            $oldForm.fadeToggle($modalAnimateTime, function () {
+                    	                $divForms.animate({ height: $newH }, $modalAnimateTime, function () {
+                    	                    $newForm.fadeToggle($modalAnimateTime);
+                    	                });
+                    	            });
+                    	        }
+
+                    	        function msgFade($msgId, $msgText) {
+                    	            $msgId.fadeOut($msgAnimateTime, function () {
+                    	                $(this).text($msgText).fadeIn($msgAnimateTime);
+                    	            });
+                    	        }
+
+                    	        function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
+                    	            var $msgOld = $divTag.text();
+                    	            msgFade($textTag, $msgText);
+                    	            $divTag.addClass($divClass);
+                    	            $iconTag.removeClass("glyphicon-chevron-right");
+                    	            $iconTag.addClass($iconClass + " " + $divClass);
+                    	            setTimeout(function () {
+                    	                msgFade($textTag, $msgOld);
+                    	                $divTag.removeClass($divClass);
+                    	                $iconTag.addClass("glyphicon-chevron-right");
+                    	                $iconTag.removeClass($iconClass + " " + $divClass);
+                    	            }, $msgShowTime);
+                    	        }
+                    	    });
+
+                            </script>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="image/catalog/logo2.png">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">نام کاربری و گذرواژه ی خود را وارد کنید</span>
+                            </div>
+				    		<input id="login_username" class="form-control" type="text" placeholder="نام کاربری" required="">
+				    		<input id="login_password" class="form-control" type="password" placeholder="گذرواژه" required="">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> من را به خاطر بسپار
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">ورود</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">گذرواژه ی خود را فراموش کردید؟</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">ثبت نام</button>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">ایمیل خود را وارد کنید</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="ایمیل" required="">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">ارسال</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">ورود</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">ثبت نام</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">ثبت نام حساب جدید</span>
+                            </div>
+		    				<input id="register_username" class="form-control" type="text" placeholder="نام کاربری" required="">
+                            <input id="register_email" class="form-control" type="text" placeholder="ایمیل" required="">
+                            <input id="register_password" class="form-control" type="password" placeholder="گذرواژه" required="">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">ثبت نام</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">ورود</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">گذرواژه ی خود را فراموش کردید؟</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+				</div>
+
+				<div id="header">
+					<div class="container">
+						<div class="row">
+							<!-- Cart Holder -->
+							<div id="header-right" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 hidden-xs">
+								<!-- Cart block -->
+								<div id="cart">
+									<div class="cart-heading dropdown-toogle" data-hover="dropdown" data-toggle="dropdown" style="border-radius:4px !important;">
+
+										<span ><p  class="hidden-sm hidden-md">سبد خرید</p>
+										
+										</span>
+
+									</div>
+									<div class="dropdown-menu" id="cart_content">
+										<div id="cart_content_ajax">
+											<div class="empty">هنوز محصولی را به سبد خرید اضافه نکرده اید</div>
+										</div>
+									</div>
+
+
+								</div>
+
+
+
+
+
+							</div>
+
+
+							<!-- Search Holder -->
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
+								<div id="search" class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding: 0px;">
+									<input type="text" name="search" style="text-align:right!important;direction:rtl !important; padding-right:100px !important;" placeholder="جستجو در سایت..." value="" />
+									<span class="button-search">جستجو</span>
+								</div>
+							</div>
+
+
+
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 logo-inner">
+								<div class="logo-store">
+									<a href="index.html">
+										<img src="image/catalog/logo2.png" Your Store" alt="Your Store" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="visible-xs col-xs-12" style="text-align:center;display:inline-block; margin-bottom:20px;">
+						<div id="megaMenuToggle">
+							<div class="megamenuToogle-wrapper">
+								<div class="megamenuToogle-pattern">
+									<div class="container">
+										<span class="fa fa-bars"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<a href="index630e.html?route=checkout/cart">
+							<div class="tg-search" style="display:inline-block;">
+								<span class="fa fa-shopping-cart"></span>
+							</div>
+						</a>
+						<div class="tg-search" style="display:inline-block;">
+							<div id="tg-search2">
+								<div class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+									<span class="fa fa-search"></span>
+								</div>
+
+								<ul class="dropdown-menu keep_open">
+									<li>
+
+										<div id="Div1">
+											<input type="text" name="search2" placeholder="Search" value="" />
+											<span class="button-search2 fa fa-search"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<div class="container horizontal" >
+						<div class="megamenu-wrapper">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+								<ul class="megamenu">
+
+									<li class="with-sub-menu hover">
+										<p class="close-menu"></p>
+										<a href="index.html"><span><strong>صفحه اصلی</strong></span></a>
+										
+									</li>
+									<li>
+										<a href="woman-accessories.html"><span><strong>بدلیجات زنانه</strong></span></a>
+									</li>
+									<li class="with-sub-menu hover">
+										<p class="close-menu"></p>
+										<a href="kids-store.html"><span><strong>لباس کودک</strong></span></a>
+										<div class="sub-menu" style="width: 220px; display: none; right: auto;">
+											<div class="content" style="display: none; height: 104px;">
+												<div class="row hover-menu">
+													<div class="col-sm-12">
+														<div class="menu">
+															<ul>
+																<li><a href="index9ead.html?route=product/category&amp;path=67_68" onclick="window.location = 'index9ead.html?route=product/category&amp;path=67_68';">لباس کودک 1</a></li>
+																<li><a href="index4980.html?route=product/category&amp;path=67_69" onclick="window.location = 'index4980.html?route=product/category&amp;path=67_69';">لباس کودک 2</a></li>
+																<li><a href="indexef88.html?route=product/category&amp;path=67_70" onclick="window.location = 'indexef88.html?route=product/category&amp;path=67_70';">لباس کودک 3</a></li>
+																<li><a href="index1191.html?route=product/category&amp;path=67_71" onclick="window.location = 'index1191.html?route=product/category&amp;path=67_71';">لباس کودک 4</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="with-sub-menu hover">
+										<p class="close-menu"></p>
+										<a href="electronics.html"><span><strong>ابزارآلات برقی</strong></span></a>
+										
+									</li>
+									<li>
+										<a href="HANDMADE-GIFTS.html"><span><strong>صنایع دستی</strong></span></a>
+									</li>
+								
+									<li>
+										<a href="home-decor.html"><span><strong>دکور منزل</strong></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+			</header>
+
+<!-- BREADCRUMB
+	================================================== -->
+<div class="breadcrumb">
+			<div class="container">
+				<div class="clearfix">
+					<ul>
+												<li><a href="index.html"><i class="fa fa-home"></i></a></li>
+												<li><a href="site map.html">نقشه ی فروشگاه</a></li>
+											</ul>
+				</div>
+
+
+			</div>
+</div>
+
+<!-- MAIN CONTENT
+	================================================== -->
+<div class="main-content full-width inner-page">
+			<div class="container">
+				
+				<div class="row">
+										
+										<div class="col-sm-12">
+												
+												
+						<div class="row">
+														<div class="col-sm-12 center-column">
+							
+								<h2 id="title-page">نقشه ی فروشگاه																	</h2>
+
+																
+								
+
+  
+	</div>
+													</div>
+					</div>
+				</div>
+				
+				<div class="row">	
+					<div class="col-sm-12">	
+											</div>
+				</div>
+
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12708.535205454233!2d49.2809622!3d37.2207985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3b90bf91f01db82c!2sFouman+College+of+Engineering!5e0!3m2!1sen!2s!4v1514582322354" width="600" height="450" frameborder="0" style="border:0; float:right;" allowfullscreen></iframe>
+
+			</div>
+
+	</div>				  
+
+	
+	
+	<!-- FOOTER
+		================================================== -->
+					<div class="footer full-width">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-sm-2 col-xs-6 footer-column">
+								<h4>داغ ترین ها</h4>
+
+
+								<ul>
+
+
+									<li><a href="#">Lookbook 2017</a></li>
+
+
+									<li><a href="#">حراج</a></li>
+
+
+									<li><a href="#">نمایندگی ها</a></li>
+
+
+									<li><a href="#">بهترین فروشنده</a></li>
+
+
+									<li><a href="site map.html">نقشه ی فروشگاه</a></li>
+
+
+								</ul>
+							</div>
+
+							<div class="col-sm-2 col-xs-6 footer-column">
+								<h4>کمک بیشتر</h4>
+
+								<ul>
+
+									<li><a href="#">تاریخچه زبلون</a></li>
+
+									<li><a href="#">بازشگت کالا</a></li>
+
+									<li><a href="#">سیاست های ارسال</a></li>
+
+									<li><a href="#">پرداخت امن</a></li>
+
+									<li><a href="contact us.html">تماس با ما</a></li>
+
+								</ul>
+							</div>
+
+
+
+
+							<!-- Information -->
+							<div class="col-sm-2 col-xs-6 footer-column">
+								<h4>اطلاعات</h4>
+
+								<ul>
+									<li><a href="about us.html">درباره ی ما</a></li>
+									<li><a href="index1766.html?route=information/information&amp;information_id=6">اطلاعات ارسال </a></li>
+									<li><a href="index1679.html?route=information/information&amp;information_id=3">قوانین و سیاست ها</a></li>
+									<li><a href="index99e4.html?route=information/information&amp;information_id=5">اصول &amp; شرایط</a></li>
+								</ul>
+							</div>
+
+							<!-- Customer Service -->
+							<div class="col-sm-2 col-xs-6 footer-column">
+								<h4>سرویس مشتری</h4>
+
+								<ul>
+									<li><a href="contact us.html">تماس با ما</a></li>
+									<li><a href="index71ba.html?route=account/return/add">بازگشت کالا</a></li>
+									<li><a href="site map.html">نقشه ی فروشگاه</a></li>
+								</ul>
+							</div>
+
+							<!-- Extras -->
+							<div class="col-sm-2 col-xs-6 footer-column">
+								<h4>بیشتر</h4>
+
+								<ul>
+									<li><a href="indexd773.html?route=product/manufacturer">برند ها</a></li>
+									<li><a href="index4dd2.html?route=account/voucher">بن های هدیه</a></li>
+									<li><a href="index3d18.html?route=affiliate/account">بازاریابی</a></li>
+									<li><a href="indexf110.html?route=product/special">ویژه ها</a></li>
+
+									<li><a href="index9ccb.html?route=news/ncategory">سرتیتر های برتر</a></li>
+
+								</ul>
+							</div>
+
+							<!-- My Account -->
+							<div class="col-sm-2 col-xs-6 footer-column">
+								<h4>حساب من</h4>
+
+								<ul>
+									<li><a href="indexe223.html?route=account/account">حساب من</a></li>
+									<li><a href="indexe223.html?route=account/order">تاریخچه ی سفارش</a></li>
+									<li><a href="indexe223.html?route=account/wishlist">لیست علاقمندی</a></li>
+									<li><a href="indexe223.html?route=account/newsletter">خبرنامه</a></li>
+								</ul>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
+				<!-- COPYRIGHT
+					================================================== -->
+				<div class="copyright">
+
+                    
+									<p style="color:white;" class="copyright-left">طراحی و توسعه <a style="color:red;" href="http://www.zebloon.com/">فروشگاه اینترنتی زبلون</a>  توسط <a style="color:red;" href="http://www.tlgrm.me/catricka">مریم اکبری مقدم</a></p>
+
+					<div class="container pattern">
+
+						
+
+
+						<ul class="copyright-right">
+							<li><a href="http://eNamad.ir/"><img src="image/catalog/zebloon/namad1.png" width="100" height="40" ></a></li>
+							
+						</ul>
+
+
+
+
+					</div>
+
+
+				</div>
+
+
+
+
+
+				<script type="text/javascript" src="catalog/view/theme/zebloon/js/megamenu.js"></script>
+			</div>
+
+			<a href="#" class="scrollup"><i class="fa fa-caret-up"></i>بالا</a>
+		</div>
+        <script type="text/javascript">window.$crisp = []; window.CRISP_WEBSITE_ID = "142cdaed-d85b-4130-b579-e1aec11d1488"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+</body>
+
+
+</html>
